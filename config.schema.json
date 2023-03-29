@@ -1,0 +1,70 @@
+{
+  "pluginAlias": "homebridge-better-garage-door",
+  "pluginType": "accessory",
+  "headerDisplay": "Better Garage Door for Homebridge",
+  "schema": {
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string",
+        "minLength": 3,
+        "required": true,
+        "title": "Name",
+        "description": "Name of accessory."
+      },
+      "switchServiceName": {
+        "type": "string",
+        "minLength": 3,
+        "required": true,
+        "title": "Switch service name",
+        "description": "Service name of switch accessory."
+      },
+      "switchCharacteristicName": {
+        "type": "string",
+        "title": "Switch characteristic type",
+        "required": false,
+        "description": "Characteristic type of your switch accessory, default is 'On'"
+      },
+      "sensorServiceName": {
+        "type": "string",
+        "required": true,
+        "title": "Sensor service name",
+        "description": "Service name of sensor accessory."
+      },
+      "sensorCharacteristicName": {
+        "type": "string",
+        "required": false,
+        "title": "Sensor characteristic type",
+        "description": "Characteristic type of your switch accessory, default is 'ContactSensorState'"
+      },
+      "openTime": {
+        "type": "number",
+        "required": false,
+        "title": "Garage door open time",
+        "description": "Garage door opening time in seconds, add few seconds in sensor communicate over internet"
+      },
+      "hapClientPin": {
+        "type": "string",
+        "required": false,
+        "title": "Homebridge PIN",
+        "description": "Homebridge PIN (under QR code)"
+      },
+      "initDelay": {
+        "type": "number",
+        "required": false,
+        "title": "Initialization delay",
+        "description": "Initialization delay in seconds, initialization of same services can take time. This module must be initialized after Switch and Sensor. Default 20s"
+      }
+    },
+    "layout": [
+      "name",
+      "switchServiceName",
+      "switchCharacteristicName",
+      "sensorServiceName",
+      "sensorCharacteristicName",
+      "openTime",
+      "hapClientPin",
+      "initDelay"
+    ]
+  }
+}
